@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="mb-3">
+    <form [formGroup]="formulario">
+      <label for="input1" class="form-label">RA</label>
+      <input type="text" class="form-control col-3" id="ra" formControlName="ra" name="ra" [(ngModel)]="ra" required>
+      <div style="color: red; font-size: small;" *ngIf="formulario.get('ra')?.errors">RA obrigatório</div>
+
+      <label for="input1" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" formControlName="nome" name="nome"  [(ngModel)]="nome" required>
+      <div style="color: red; font-size: small;" *ngIf="formulario.get('nome')?.errors">Nome obrigatório</div>
+
+      <label for="input1" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email" name="email" [(ngModel)]="email" required >
+      <div style="color: red; font-size: small;" *ngIf="formulario.get('email')?.errors">Email obrigatório</div>
+
+      <label for="input1" class="form-label">Celular</label>
+      <input type="text" class="form-control" id="celular" formControlName="celular" name="celular" [(ngModel)]="celular" required>
+      <div style="color: red; font-size: small;" *ngIf="formulario.get('celular')?.errors">Celular obrigatório</div>
+
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="!formulario.valid" (click)="formAluno = !formAluno" >Enviar</button>
+    </form>
+    <br>
+    <hr>
+    <br>
+
+    <h1>Dados do formulário</h1>
+
+  <form *ngIf="formAluno">
+    <label for="input1" class="form-label">RA</label>
+    <input type="text" class="form-control col-3" id="ra" aria-describedby="ra" name="ra" [(ngModel)]="ra" disabled>
+
+    <label for="input1" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" aria-describedby="nome" name="nome"  [(ngModel)]="nome" disabled>
+
+    <label for="input1" class="form-label">Email</label>
+    <input type="text" class="form-control" id="email" aria-describedby="email" name="email" [(ngModel)]="email"disabled >
+
+    <label for="input1" class="form-label">Celular</label>
+    <input type="text" class="form-control" id="celular" aria-describedby="celular" name="celular" [(ngModel)]="celular" disabled>
+  </form>
+</div>

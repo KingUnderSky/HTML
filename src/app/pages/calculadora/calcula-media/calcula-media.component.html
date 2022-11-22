@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Calcula média</h1>
+</div>
+<div class="container d-flex">
+  <div class="m-3">
+    <label class="form-label" for="">AC1</label>
+    <input max="10" min="0" class="form-control" type="number" [(ngModel)]="ac1">
+  </div>
+  <div class="m-3">
+    <label class="form-label" for="">AC2</label>
+    <input max="10" min="0" class="form-control" type="number" [(ngModel)]="ac2">
+  </div>
+  <div class="m-3">
+    <label class="form-label" for="">AG</label>
+    <input max="10" min="0" class="form-control" type="number" [(ngModel)]="ag">
+  </div>
+  <div class="m-3">
+    <label class="form-label" for="">AF</label>
+    <input max="10" min="0" class="form-control" type="number" [(ngModel)]="af">
+  </div>
+  <div class="m-3">
+    <label class="form-label" for="">Resultado</label>
+    <input type="text" class="form-control" disabled="true" [(ngModel)]="resultado">
+  </div>
+</div>
+<div class="container">
+  <button type="button" class="btn btn-primary w-100" (click)="calcular()" >Calcular</button>
+  <p>{{ aprovacao }}</p>
+</div>
